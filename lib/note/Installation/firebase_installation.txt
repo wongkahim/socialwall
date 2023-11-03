@@ -1,0 +1,28 @@
+url: https://medium.com/@rehmaankhan287/how-to-configure-your-flutter-app-with-firebase-using-firebase-cli-eca42248ae92
+
+Step 1:
+- installing Firebase CLI
+
+Step 2:
+- installing Node.js
+
+Step 3: installing firebase tools
+- npm install -g firebase-tools
+
+Step 4: activate flutterfire_cli
+- dart pub global activate flutterfire_cli
+/ 
+- dart pub global run flutterfire_cli:flutterfire
+
+Step 5: Add Path to Environment Setting
+C:\Users\ah him\AppData\Local\Pub\Cache\bin
+/
+C:\Users\$Users\AppData\Local\Pub\Cache\bin
+
+Step 6: firebase login
+firebase login
+
+Step 7: flutterfire configure
+flutterfire configure
+/
+dart pub global run flutterfire_cli:flutterfire configure

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "527607119267",
+    "firebase_url": "https://socialmedia-12a0f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "socialmedia-12a0f",
+    "storage_bucket": "socialmedia-12a0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527607119267:android:2b0ecc9ef17da6c0f7ae16",
+        "android_client_info": {
+          "package_name": "com.example.socialwall"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgM4YkZIEKnI1zOUe2OTKLJwzmW2Zuq2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

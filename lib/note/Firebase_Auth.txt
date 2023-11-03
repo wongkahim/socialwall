@@ -1,0 +1,90 @@
+Step 1: init Firebase in main.dart
+    void main() async {
+        WidgetsFlutterBinding.ensureInitialized();
+        await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+        runApp(const MainApp());
+    }
+
+Step 2: Sign Up
+    // User sign up
+    Future<void> signUp() async {
+        // show loading cirlce
+        showDialog(
+            context: context,
+            builder: (context) => const Center(
+            child: CircularProgressIndicator(),
+            ),
+        );
+
+        // make sure passwords match
+        if (passwordTextController.text != confirmPasswordTextController.text) {
+            singUpFail(errMsg: "Password don't match!");
+            return;
+        }
+
+        // try creating the user
+        try {
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                email: emailTextController.text,
+                password: passwordTextController.text,
+            );
+            // pop loading circle
+            if (context.mounted) Navigator.pop(context);
+
+        } on FirebaseAuthException catch (e) {
+            //display error message
+            sigeUpFail(errMsg: e.code);
+        }
+    }
+
+    void sigeUpFail({String errMsg = ""}) {
+        // pop loading circle
+        Navigator.pop(context);
+
+        // display error message
+        showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+                title: Text(errMsg),
+            ),
+        );
+    }
+
+Step 3: Sign In
+    // User Sign In
+    void signIn() async {
+        //show loading circle
+        showDialog(
+            context: context,
+            builder: (context) => const Center(
+                child: CircularProgressIndicator(),
+            ),
+        );
+
+        // try sign in
+        try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: emailTextController.text,
+            password: passwordTextController.text,
+        );
+        //pop loading circle
+        if (context.mounted) Navigator.pop(context);
+
+        } on FirebaseAuthException catch (signInErr) {
+            //display error message
+            sigeInFail(errMsg: signInErr.code);
+        }
+    }
+
+    void sigeInFail({String errMsg = ""}) {
+        // pop loading circle
+        Navigator.pop(context);
+
+        // display error message
+        showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+                title: Text(errMsg),
+            ),
+        );
+  }

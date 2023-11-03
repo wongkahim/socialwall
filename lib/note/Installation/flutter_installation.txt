@@ -1,0 +1,6 @@
+url: https://docs.flutter.dev/get-started/install
+
+Step 1: install zip
+Step 2: unzip the folder
+Step 3: Put the folder to the local dirrectory
+Step 4: Add Path
