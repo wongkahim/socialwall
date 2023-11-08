@@ -88,32 +88,34 @@ class _WallCommentState extends State<WallComment> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // comment
-              Text(widget.text),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // comment
+                Text(widget.text),
 
-              const SizedBox(height: 5),
+                const SizedBox(height: 5),
 
-              // user, time
-              Row(
-                children: [
-                  Text(
-                    widget.user,
-                    style: TextStyle(color: Colors.grey[400]),
-                  ),
-                  Text(" 📝  ",
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                      )),
-                  Text(
-                    widget.time,
-                    style: TextStyle(color: Colors.grey[400]),
-                  ),
-                ],
-              ),
-            ],
+                // user, time
+                Row(
+                  children: [
+                    Text(
+                      widget.user,
+                      style: TextStyle(color: Colors.grey[400]),
+                    ),
+                    Text(" 📝  ",
+                        style: TextStyle(
+                          color: Colors.grey[400],
+                        )),
+                    Text(
+                      widget.time,
+                      style: TextStyle(color: Colors.grey[400]),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
 
           // edit button

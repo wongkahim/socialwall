@@ -265,32 +265,36 @@ class _WallPostState extends State<WallPost> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // group of text(message + user email)
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // message
-                    Text(widget.message),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // message
+                      Text(
+                        widget.message,
+                      ),
 
-                    const SizedBox(height: 5),
+                      const SizedBox(height: 5),
 
-                    // user
-                    Row(
-                      children: [
-                        Text(
-                          widget.user,
-                          style: TextStyle(color: Colors.grey[400]),
-                        ),
-                        Text(" ✍🏻  ",
-                            style: TextStyle(
-                              color: Colors.grey[400],
-                            )),
-                        Text(
-                          widget.time,
-                          style: TextStyle(color: Colors.grey[400]),
-                        )
-                      ],
-                    ),
-                  ],
+                      // user
+                      Row(
+                        children: [
+                          Text(
+                            widget.user,
+                            style: TextStyle(color: Colors.grey[400]),
+                          ),
+                          Text(" ✍🏻  ",
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                              )),
+                          Text(
+                            widget.time,
+                            style: TextStyle(color: Colors.grey[400]),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
 
                 // edit button
@@ -356,7 +360,7 @@ class _WallPostState extends State<WallPost> {
                   .collection("User Posts")
                   .doc(widget.postId)
                   .collection("Comments")
-                  .orderBy("CommentTime", descending: true)
+                  .orderBy("CommentTime", descending: false)
                   .snapshots(),
               builder: (context, snapshot) {
                 //show loading circle if no data yet
